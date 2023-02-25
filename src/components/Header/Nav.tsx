@@ -2,7 +2,7 @@ import BasketIcon from "../../assets/basket.svg";
 
 const Nav = () => {
   return (
-    <nav>
+    <nav aria-label="primary-navigation">
       <menu>
         <li>
           <a href="#TBD">HOME</a>

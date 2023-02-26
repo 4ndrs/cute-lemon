@@ -1,3 +1,4 @@
+import { mainMenu, socials } from "../../links";
 import Logo from "../../assets/logo2.png";
 
 const Footer = () => {
@@ -8,24 +9,11 @@ const Footer = () => {
       <nav aria-labelledby="doormat-navigation">
         <h2 id="doormat-navigation">Doormat Navigation</h2>
         <menu>
-          <li>
-            <a href="#TBD">Home</a>
-          </li>
-          <li>
-            <a href="#TBD">About</a>
-          </li>
-          <li>
-            <a href="#TBD">Menu</a>
-          </li>
-          <li>
-            <a href="#TBD">Reservations</a>
-          </li>
-          <li>
-            <a href="#TBD">Order Online</a>
-          </li>
-          <li>
-            <a href="#TBD">Login</a>
-          </li>
+          {mainMenu.map((link) => (
+            <li key={link.name}>
+              <a href={link.href}>{link.name}</a>
+            </li>
+          ))}
         </menu>
       </nav>
 
@@ -39,15 +27,11 @@ const Footer = () => {
       <div>
         <h2>Social Media Links</h2>
         <menu>
-          <li>
-            <a href="#TBD">Twitter</a>
-          </li>
-          <li>
-            <a href="#TBD">Instagram</a>
-          </li>
-          <li>
-            <a href="#TBD">Facebook</a>
-          </li>
+          {socials.map((link) => (
+            <li key={link.name}>
+              <a href={link.href}>{link.name}</a>
+            </li>
+          ))}
         </menu>
       </div>
     </footer>

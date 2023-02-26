@@ -1,27 +1,15 @@
+import { mainMenu } from "../../links";
 import BasketIcon from "../../assets/basket.svg";
 
 const Nav = () => {
   return (
     <nav aria-label="primary-navigation">
       <menu>
-        <li>
-          <a href="#TBD">HOME</a>
-        </li>
-        <li>
-          <a href="#TBD">ABOUT</a>
-        </li>
-        <li>
-          <a href="#TBD">MENU</a>
-        </li>
-        <li>
-          <a href="#TBD">RESERVATIONS</a>
-        </li>
-        <li>
-          <a href="#TBD">ORDER ONLINE</a>
-        </li>
-        <li>
-          <a href="#TBD">LOGIN</a>
-        </li>
+        {mainMenu.map((link) => (
+          <li key={link.name}>
+            <a href={link.href}>{link.name.toUpperCase()}</a>
+          </li>
+        ))}
         <li>
           <a href="#TBD">
             <img src={BasketIcon} alt="Basket icon" />

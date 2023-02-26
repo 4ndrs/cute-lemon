@@ -1,18 +1,13 @@
 import Hero from "./Hero";
 import Highlights from "./Highlights";
+import Testimonials from "./Testimonials";
 
 const Home = () => {
   return (
     <main>
       <Hero />
       <Highlights />
-      <section>
-        <header></header>
-        <article></article>
-        <article></article>
-        <article></article>
-        <article></article>
-      </section>
+      <Testimonials />
       <section></section>
     </main>
   );

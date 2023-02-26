@@ -1,15 +1,11 @@
 import Hero from "./Hero";
+import Highlights from "./Highlights";
 
 const Home = () => {
   return (
     <main>
       <Hero />
-      <section>
-        <header></header>
-        <article></article>
-        <article></article>
-        <article></article>
-      </section>
+      <Highlights />
       <section>
         <header></header>
         <article></article>

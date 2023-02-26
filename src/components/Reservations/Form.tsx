@@ -1,5 +1,6 @@
 import ClockIcon from "../../assets/clock.svg";
 import CalendarIcon from "../../assets/calendar.svg";
+import InfoIcon from "../../assets/info.svg";
 
 const Form = () => {
   return (
@@ -44,6 +45,11 @@ const Form = () => {
           <option>Indoors (Zone A)</option>
           <option>Indoors (Zone B)</option>
         </select>
+
+        <label>Additional information</label>
+        <a href="#TBD">
+          <img src={InfoIcon} alt="Information" />
+        </a>
       </div>
 
       <div>

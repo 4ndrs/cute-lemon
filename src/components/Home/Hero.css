@@ -1,0 +1,34 @@
+.hero > header {
+  grid-area: header;
+}
+
+.hero > p {
+  grid-area: description;
+  max-width: 247px;
+}
+
+.hero > button {
+  grid-area: reserve-button;
+}
+
+.hero > img {
+  grid-area: image;
+  max-width: 338px;
+  max-height: 398px;
+  justify-self: end;
+}
+
+.hero > header,
+.hero > button,
+.hero > p {
+  justify-self: start;
+}
+
+.hero {
+  display: grid;
+  grid-template-areas:
+    "header image"
+    "description image"
+    "reserve-button image"
+    ". image";
+}

@@ -1,5 +1,4 @@
 import { mainMenu } from "../../links";
-import BasketIcon from "../../assets/basket.svg";
 
 const Nav = () => {
   return (
@@ -10,11 +9,6 @@ const Nav = () => {
             <a href={link.href}>{link.name.toUpperCase()}</a>
           </li>
         ))}
-        <li>
-          <a href="#TBD">
-            <img src={BasketIcon} alt="Basket icon" />
-          </a>
-        </li>
       </menu>
     </nav>
   );

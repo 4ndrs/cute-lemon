@@ -1,0 +1,58 @@
+.highlights > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.specials {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.special-card .picture {
+  grid-area: special-card-picture;
+  height: 186px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.special-card .title {
+  grid-area: special-card-title;
+  justify-self: start;
+}
+
+.special-card .price {
+  grid-area: special-card-price;
+  justify-self: end;
+}
+
+.special-card .description {
+  grid-area: special-card-description;
+  white-space: normal;
+  height: 80px;
+}
+
+.special-card .order-delivery {
+  grid-area: special-card-order-delivery;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.special-card .bike-icon {
+  grid-area: bike-icon;
+  width: 19px;
+  height: 19px;
+}
+
+.special-card {
+  display: inline-grid;
+  grid-template-areas:
+    "special-card-picture special-card-picture"
+    "special-card-title special-card-price"
+    "special-card-description special-card-description"
+    "special-card-order-delivery .";
+  width: 282px;
+  height: 474px;
+  margin-right: 5em;
+}

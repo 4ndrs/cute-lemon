@@ -1,0 +1,54 @@
+.testimonials > header {
+  text-align: center;
+}
+
+.testimonials > .comments {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-card > .rating {
+  grid-area: comment-rating;
+}
+
+.comment-card .star-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.comment-card > .picture {
+  grid-area: comment-picture;
+  align-self: center;
+  width: 43px;
+  height: 43px;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
+.comment-card > .name {
+  grid-area: comment-name;
+  align-self: end;
+  margin: 0 0 0 1rem;
+}
+
+.comment-card > .nickname {
+  grid-area: comment-nickname;
+  align-self: start;
+  margin: 0 0 0 1rem;
+}
+
+.comment-card > .comment {
+  grid-area: comment-comment;
+}
+
+.comment-card {
+  display: grid;
+  grid-template:
+    "comment-rating comment-rating" min-content
+    "comment-picture comment-name"
+    "comment-picture comment-nickname"
+    "comment-comment comment-comment"
+    / min-content auto;
+  width: 206px;
+  height: 219px;
+}

@@ -1,9 +1,11 @@
 import { mainMenu, socials } from "../../links";
 import Logo from "../../assets/logo2.png";
 
+import "./Footer.css";
+
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footer">
       <img src={Logo} alt="Little Lemon logo" />
 
       <nav aria-labelledby="doormat-navigation">
@@ -19,9 +21,11 @@ const Footer = () => {
 
       <div>
         <h2>Contact</h2>
-        <div>2812 S Wenworth Ave Chicago IL 60616-2648</div>
-        <div>(555) 555-1234</div>
-        <div>info@little-lemon.com</div>
+        <div className="contact-info">
+          <div>2812 S Wenworth Ave Chicago IL 60616-2648</div>
+          <div>(555) 555-1234</div>
+          <div>info@little-lemon.com</div>
+        </div>
       </div>
 
       <div>

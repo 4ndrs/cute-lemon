@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer menu,
+.footer .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer menu {
+  list-style-type: none;
+  padding: 0;
+}

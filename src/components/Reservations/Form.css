@@ -1,0 +1,61 @@
+.calendar-icon {
+  width: 41px;
+  height: 41px;
+}
+
+.clock-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.info-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.form-container,
+.overview-container,
+.kansha-container {
+  width: 431px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.date-field,
+.clock-field,
+.diners-field,
+.occasion-field,
+.area-field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.date-field > :last-child,
+.clock-field > :last-child,
+.diners-field > :last-child,
+.occasion-field > :last-child,
+.area-field > :last-child {
+  margin-left: auto;
+}
+
+.area-field + .more-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.form-container > .text-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kansha-container {
+  text-align: center;
+}

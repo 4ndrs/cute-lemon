@@ -2,23 +2,25 @@ import ClockIcon from "../../assets/clock.svg";
 import CalendarIcon from "../../assets/calendar.svg";
 import InfoIcon from "../../assets/info.svg";
 
+import "./Form.css";
+
 const Form = () => {
   return (
-    <form>
-      <div>
-        <img src={CalendarIcon} alt="Calendar" />
+    <form className="form-container">
+      <div className="date-field">
+        <img src={CalendarIcon} alt="Calendar" className="calendar-icon" />
         <label>Date</label>
         <input type="date" />
       </div>
-      <div>
-        <img src={ClockIcon} alt="Clock" />
+      <div className="clock-field">
+        <img src={ClockIcon} alt="Clock" className="clock-icon" />
         <label>Time</label>
         <input type="time" />
       </div>
 
       <h2>Details</h2>
 
-      <div>
+      <div className="diners-field">
         <label>Diners</label>
         <select>
           <option>2</option>
@@ -27,7 +29,7 @@ const Form = () => {
         </select>
       </div>
 
-      <div>
+      <div className="occasion-field">
         <label>Occasion</label>
         <select>
           <option>Standard</option>
@@ -37,7 +39,7 @@ const Form = () => {
         </select>
       </div>
 
-      <div>
+      <div className="area-field">
         <label>Area</label>
         <select>
           <option>Storefront (Indoors)</option>
@@ -45,14 +47,15 @@ const Form = () => {
           <option>Indoors (Zone A)</option>
           <option>Indoors (Zone B)</option>
         </select>
-
+      </div>
+      <div className="more-info">
         <label>Additional information</label>
         <a href="#TBD">
-          <img src={InfoIcon} alt="Information" />
+          <img src={InfoIcon} alt="Information" className="info-icon" />
         </a>
       </div>
 
-      <div>
+      <div className="text-fields">
         <label>Your name</label>
         <input />
 
@@ -63,7 +66,7 @@ const Form = () => {
         <textarea rows={5} cols={33} />
       </div>
 
-      <div>
+      <div className="form-navigation">
         <div>1/2</div>
         <button>Next</button>
       </div>
@@ -73,7 +76,7 @@ const Form = () => {
 
 const Overview = () => {
   return (
-    <>
+    <div className="overview-container">
       <h2>Time and Date</h2>
       <p>08:30 PM 2023/02/28</p>
 
@@ -99,23 +102,25 @@ const Overview = () => {
         Fusce sed semper leo, eget efficitur metus.
       </p>
 
-      <div>
+      <div className="form-navigation">
         <div>2/2</div>
         <button>Reserve</button>
       </div>
-    </>
+    </div>
   );
 };
 
 const Kansha = () => (
-  <>
+  <div className="kansha-container">
     <h1>Thank you!</h1>
     <p>
       A confirmation email will briefly be sent to john.doe@email.com with the
       reservation details.
     </p>
-    <button>Ok</button>
-  </>
+    <div className="form-navigation">
+      <button>Ok</button>
+    </div>
+  </div>
 );
 
 export default Form;

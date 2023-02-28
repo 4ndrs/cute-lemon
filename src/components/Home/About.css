@@ -27,3 +27,10 @@
 .about {
   display: flex;
 }
+
+@media (max-width: 685px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+}

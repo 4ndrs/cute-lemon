@@ -6,7 +6,7 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <div className="header-background">
+    <div className="header-background outer-layout">
       <header className="header">
         <input type="checkbox" className="hamburger" />
         <img src={Logo} alt="Little Lemon logo" className="logo" />

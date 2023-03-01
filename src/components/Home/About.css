@@ -1,8 +1,3 @@
-.about-background > * {
-  width: var(--global-width);
-  margin: var(--global-margin);
-}
-
 .about-background {
   background-color: white;
 }

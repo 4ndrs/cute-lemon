@@ -6,6 +6,7 @@ body {
 
 :root {
   --global-margin: 0 auto;
+  --global-padding: 0;
   --primary-green: #495e57;
   --primary-yellow: #f4ce14;
   --secondary-grey: #edefee;
@@ -14,8 +15,20 @@ body {
   --secondary-color-two: #fbdabb;
 }
 
+.outer-layout > * {
+  width: var(--global-width);
+  margin: var(--global-margin);
+  padding: var(--global-padding);
+}
+
 @media (min-width: 905px) {
   :root {
     --global-width: 900px;
+  }
+}
+
+@media (max-width: 905px) {
+  :root {
+    --global-padding: 0 24px;
   }
 }

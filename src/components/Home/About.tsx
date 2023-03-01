@@ -4,7 +4,7 @@ import Restaurant from "../../assets/restaurant.jpg";
 import "./About.css";
 
 const About = () => (
-  <div className="about-background">
+  <div className="about-background outer-layout">
     <section className="about">
       <div>
         <h1>Little Lemon</h1>

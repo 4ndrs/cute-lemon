@@ -8,7 +8,7 @@ import "./Highlights.css";
 import type { Dish } from "../../types";
 
 const Highlights = () => (
-  <div className="highlights-background">
+  <div className="highlights-background outer-layout">
     <section className="highlights">
       <header>
         <h1>This week's specials!</h1>

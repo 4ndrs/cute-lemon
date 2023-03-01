@@ -8,7 +8,7 @@ import type { Comment } from "../../types";
 import "./Testimonials.css";
 
 const Testimonials = () => (
-  <div className="testimonials-background">
+  <div className="testimonials-background outer-layout">
     <section className="testimonials">
       <header>
         <h1>What our customers say!</h1>

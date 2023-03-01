@@ -1,6 +1,7 @@
 .reservations-background > * {
   width: var(--global-width);
   margin: var(--global-margin);
+  padding: var(--global-padding);
 }
 
 .reservations-background {

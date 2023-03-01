@@ -3,7 +3,7 @@ import RestaurantFood from "../../assets/restaurantfood.jpg";
 import "./Hero.css";
 
 const Hero = () => (
-  <div className="hero-background">
+  <div className="hero-background outer-layout">
     <section className="hero">
       <header>
         <h1>Little Lemon</h1>

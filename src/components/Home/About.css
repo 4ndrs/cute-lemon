@@ -38,3 +38,15 @@
     align-items: center;
   }
 }
+
+@media (max-width: 440px) {
+  .about > .pictures {
+    height: 50vw;
+    width: 70vw;
+  }
+
+  .about > .pictures img {
+    width: 70%;
+    height: 80%;
+  }
+}

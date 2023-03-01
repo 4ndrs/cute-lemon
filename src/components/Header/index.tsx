@@ -6,14 +6,16 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <header className="header">
-      <input type="checkbox" className="hamburger" />
-      <img src={Logo} alt="Little Lemon logo" className="logo" />
-      <Nav />
-      <a href="#TBD">
-        <img src={BasketIcon} alt="Basket icon" className="basket-icon" />
-      </a>
-    </header>
+    <div className="header-background">
+      <header className="header">
+        <input type="checkbox" className="hamburger" />
+        <img src={Logo} alt="Little Lemon logo" className="logo" />
+        <Nav />
+        <a href="#TBD">
+          <img src={BasketIcon} alt="Basket icon" className="basket-icon" />
+        </a>
+      </header>
+    </div>
   );
 };
 

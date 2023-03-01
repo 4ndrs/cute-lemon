@@ -1,0 +1,21 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --global-margin: 0 auto;
+  --primary-green: #495e57;
+  --primary-yellow: #f4ce14;
+  --secondary-grey: #edefee;
+  --secondary-back: #333;
+  --secondary-color-one: #ee9972;
+  --secondary-color-two: #fbdabb;
+}
+
+@media (min-width: 905px) {
+  :root {
+    --global-width: 900px;
+  }
+}

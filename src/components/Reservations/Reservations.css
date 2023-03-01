@@ -1,3 +1,12 @@
+.reservations-background > * {
+  width: var(--global-width);
+  margin: var(--global-margin);
+}
+
+.reservations-background {
+  background-color: var(--secondary-grey);
+}
+
 .reservation-header {
   display: flex;
   justify-content: flex-start;

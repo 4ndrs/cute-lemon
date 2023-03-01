@@ -1,3 +1,12 @@
+.testimonials-background > * {
+  width: var(--global-width);
+  margin: var(--global-margin);
+}
+
+.testimonials-background {
+  background-color: var(--secondary-grey);
+}
+
 .testimonials > header {
   text-align: center;
 }

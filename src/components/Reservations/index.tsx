@@ -4,10 +4,12 @@ import "./Reservations.css";
 
 const Reservations = () => {
   return (
-    <main>
-      <Header />
-      <Form />
-    </main>
+    <div className="reservations-background">
+      <main>
+        <Header />
+        <Form />
+      </main>
+    </div>
   );
 };
 

@@ -8,12 +8,14 @@ import type { Comment } from "../../types";
 import "./Testimonials.css";
 
 const Testimonials = () => (
-  <section className="testimonials">
-    <header>
-      <h1>What our customers say!</h1>
-    </header>
-    <Comments />
-  </section>
+  <div className="testimonials-background">
+    <section className="testimonials">
+      <header>
+        <h1>What our customers say!</h1>
+      </header>
+      <Comments />
+    </section>
+  </div>
 );
 
 const Comments = () => {

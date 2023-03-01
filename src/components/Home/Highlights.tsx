@@ -8,13 +8,15 @@ import "./Highlights.css";
 import type { Dish } from "../../types";
 
 const Highlights = () => (
-  <section className="highlights">
-    <header>
-      <h1>This week's specials!</h1>
-      <button>Online Menu</button>
-    </header>
-    <Specials />
-  </section>
+  <div className="highlights-background">
+    <section className="highlights">
+      <header>
+        <h1>This week's specials!</h1>
+        <button>Online Menu</button>
+      </header>
+      <Specials />
+    </section>
+  </div>
 );
 
 const Specials = () => {

@@ -5,13 +5,13 @@
 
 .header-background {
   background-color: white;
+  z-index: 1;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1;
 }
 
 .header > .logo {
@@ -34,7 +34,7 @@
     display: block;
   }
 
-  .header {
+  .header-background {
     position: sticky;
     top: 0;
   }

@@ -1,3 +1,8 @@
+.highlights h3,
+.highlights p {
+  margin: 0;
+}
+
 .highlights > header {
   display: flex;
   justify-content: space-between;
@@ -29,7 +34,6 @@
 .special-card .description {
   grid-area: special-card-description;
   white-space: normal;
-  height: 80px;
 }
 
 .special-card .order-delivery {
@@ -54,5 +58,50 @@
     "special-card-order-delivery .";
   width: 282px;
   height: 474px;
-  margin-right: 5em;
+}
+
+.special-card:not(:last-child) {
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 570px) {
+  .specials {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .specials > * {
+    width: 100%;
+  }
+
+  .special-card {
+    grid-template:
+      "special-card-title ." min-content
+      "special-card-description special-card-picture" min-content
+      "special-card-price special-card-picture" min-content;
+    width: auto;
+    height: auto;
+  }
+
+  .special-card .picture {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+  }
+
+  .special-card .price {
+    justify-self: start;
+  }
+
+  .order-delivery,
+  .order-delivery * {
+    display: none;
+    position: absolute;
+    top: 0;
+  }
+
+  .special-card:not(:last-child) {
+    margin-right: 0;
+  }
 }

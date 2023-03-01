@@ -50,7 +50,11 @@ const Card = ({ dish }: { dish: Dish }) => (
     <h3 className="title">{dish.name}</h3>
     <span className="price">$ {dish.price.toFixed(2)}</span>
 
-    <p className="description">{dish.description}</p>
+    <p className="description">
+      {dish.description.length > 72
+        ? dish.description.slice(0, 72) + "..."
+        : dish.description}
+    </p>
 
     <div className="order-delivery">
       <strong>Order a delivery</strong>

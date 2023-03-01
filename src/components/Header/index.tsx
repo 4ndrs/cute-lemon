@@ -7,10 +7,11 @@ import "./Header.css";
 const Header = () => {
   return (
     <header className="header">
-      <img src={Logo} alt="Little Lemon logo" />
+      <input type="checkbox" className="hamburger" />
+      <img src={Logo} alt="Little Lemon logo" className="logo" />
       <Nav />
       <a href="#TBD">
-        <img src={BasketIcon} alt="Basket icon" />
+        <img src={BasketIcon} alt="Basket icon" className="basket-icon" />
       </a>
     </header>
   );

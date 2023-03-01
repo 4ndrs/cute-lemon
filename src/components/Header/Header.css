@@ -2,4 +2,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
+  z-index: 1;
+}
+
+.header > .logo {
+  width: 206px;
+  height: 56px;
+}
+
+.basket-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.hamburger {
+  display: none;
+  z-index: 1;
+}
+
+@media (max-width: 830px) {
+  .hamburger {
+    display: block;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+  }
 }

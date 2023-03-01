@@ -21,6 +21,14 @@
   margin-right: auto;
 }
 
+@media (max-width: 447px) {
+  .form-container,
+  .overview-container,
+  .kansha-container {
+    width: 100%;
+  }
+}
+
 .date-field,
 .clock-field,
 .diners-field,

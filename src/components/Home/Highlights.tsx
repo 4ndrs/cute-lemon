@@ -11,7 +11,7 @@ const Highlights = () => (
   <div className="highlights-background outer-layout">
     <section className="highlights">
       <header>
-        <h1 className="section-title">This week's specials!</h1>
+        <h1 className="section-title">This Week's Specials!</h1>
         <button>Online Menu</button>
       </header>
       <Specials />

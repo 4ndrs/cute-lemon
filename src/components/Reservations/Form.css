@@ -53,6 +53,10 @@
   align-items: center;
 }
 
+.area-field + .more-info label {
+  font-size: 12px;
+}
+
 .form-container > .text-fields {
   display: flex;
   flex-direction: column;

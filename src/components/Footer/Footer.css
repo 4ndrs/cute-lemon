@@ -19,6 +19,29 @@
   padding: 0;
 }
 
+.footer h2 {
+  font-family: Karla;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+
+.footer .contact-info,
+a {
+  color: white;
+}
+
+.footer a:link,
+.footer a:visited {
+  text-decoration: none;
+}
+
+.footer .contact-info {
+  font-family: Karla;
+  font-size: 18px;
+  font-weight: 400;
+}
+
 @media (max-width: 860px) {
   .footer {
     flex-direction: column;

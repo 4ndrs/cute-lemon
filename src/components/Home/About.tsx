@@ -7,9 +7,9 @@ const About = () => (
   <div className="about-background outer-layout">
     <section className="about">
       <div>
-        <h1>Little Lemon</h1>
-        <h2>Chicago</h2>
-        <p>
+        <h1 className="display-title">Little Lemon</h1>
+        <h2 className="sub-title">Chicago</h2>
+        <p className="lead-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in
           consequat mi. Cras malesuada mi ligula, et rutrum metus dignissim ac.
           Fusce sed semper leo, eget efficitur metus. Proin eu mi volutpat,

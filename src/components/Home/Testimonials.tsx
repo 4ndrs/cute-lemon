@@ -11,7 +11,7 @@ const Testimonials = () => (
   <div className="testimonials-background outer-layout">
     <section className="testimonials">
       <header>
-        <h1>What our customers say!</h1>
+        <h1 className="section-title">What our customers say!</h1>
       </header>
       <Comments />
     </section>
@@ -49,10 +49,10 @@ const Card = ({ comment }: { comment: Comment }) => (
     <Rating rating={comment.rating} />
 
     <img src={comment.imageSrc} alt={comment.name} className="picture" />
-    <h3 className="name">{comment.name}</h3>
-    <div className="nickname">{comment.nickname}</div>
+    <h3 className="name card-title">{comment.name}</h3>
+    <div className="nickname card-description">{comment.nickname}</div>
 
-    <p className="comment">{comment.comment}</p>
+    <p className="comment card-description">{comment.comment}</p>
   </article>
 );
 

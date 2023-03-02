@@ -28,16 +28,19 @@
 .special-card .title {
   grid-area: special-card-title;
   justify-self: start;
+  margin-bottom: 8px;
 }
 
 .special-card .price {
   grid-area: special-card-price;
   justify-self: end;
+  color: #d07725;
 }
 
 .special-card .description {
   grid-area: special-card-description;
   white-space: normal;
+  margin-bottom: 8px;
 }
 
 .special-card .order-delivery {
@@ -55,9 +58,9 @@
 
 .special-card {
   display: inline-grid;
-  grid-template-areas:
-    "special-card-picture special-card-picture"
-    "special-card-title special-card-price"
+  grid-template:
+    "special-card-picture special-card-picture" min-content
+    "special-card-title special-card-price" min-content
     "special-card-description special-card-description"
     "special-card-order-delivery .";
   width: 282px;
@@ -106,6 +109,6 @@
   }
 
   .special-card:not(:last-child) {
-    margin-right: 0;
+    margin: 0 0 20px;
   }
 }

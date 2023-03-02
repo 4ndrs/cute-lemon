@@ -11,7 +11,7 @@ const Footer = () => {
 
         <nav aria-labelledby="doormat-navigation">
           <h2 id="doormat-navigation">Doormat Navigation</h2>
-          <menu>
+          <menu className="lead-text">
             {mainMenu.map((link) => (
               <li key={link.name}>
                 <a href={link.href}>{link.name}</a>
@@ -31,7 +31,7 @@ const Footer = () => {
 
         <div>
           <h2>Social Media Links</h2>
-          <menu>
+          <menu className="lead-text">
             {socials.map((link) => (
               <li key={link.name}>
                 <a href={link.href}>{link.name}</a>

@@ -6,10 +6,10 @@ const Hero = () => (
   <div className="hero-background outer-layout">
     <section className="hero">
       <header>
-        <h1>Little Lemon</h1>
-        <h2>Chicago</h2>
+        <h1 className="display-title">Little Lemon</h1>
+        <h2 className="sub-title">Chicago</h2>
       </header>
-      <p>
+      <p className="lead-text">
         We are a family owned Mediterranean restaurant, focused on traditional
         recipes served with a modern twist.
       </p>

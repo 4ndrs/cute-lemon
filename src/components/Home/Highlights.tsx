@@ -11,7 +11,7 @@ const Highlights = () => (
   <div className="highlights-background outer-layout">
     <section className="highlights">
       <header>
-        <h1>This week's specials!</h1>
+        <h1 className="section-title">This week's specials!</h1>
         <button>Online Menu</button>
       </header>
       <Specials />
@@ -49,10 +49,10 @@ const Card = ({ dish }: { dish: Dish }) => (
   <article className="special-card">
     <img className="picture" src={dish.imageSrc} alt={dish.name} />
 
-    <h3 className="title">{dish.name}</h3>
-    <span className="price">$ {dish.price.toFixed(2)}</span>
+    <h3 className="title card-title">{dish.name}</h3>
+    <span className="price highlight-text">$ {dish.price.toFixed(2)}</span>
 
-    <p className="description">
+    <p className="description card-description">
       {dish.description.length > 72
         ? dish.description.slice(0, 72) + "..."
         : dish.description}

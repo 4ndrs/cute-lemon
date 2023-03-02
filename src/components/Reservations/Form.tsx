@@ -18,7 +18,7 @@ const Form = () => {
         <input type="time" />
       </div>
 
-      <h2>Details</h2>
+      <h2 className="lead-text">Details</h2>
 
       <div className="diners-field">
         <label>Diners</label>
@@ -77,25 +77,25 @@ const Form = () => {
 const Overview = () => {
   return (
     <div className="overview-container">
-      <h2>Time and Date</h2>
+      <h2 className="lead-text">Time and Date</h2>
       <p>08:30 PM 2023/02/28</p>
 
-      <h2>Diners</h2>
+      <h2 className="lead-text">Diners</h2>
       <p>2</p>
 
-      <h2>Occasion</h2>
+      <h2 className="lead-text">Occasion</h2>
       <p>Standard</p>
 
-      <h2>Area</h2>
+      <h2 className="lead-text">Area</h2>
       <p>Storefront (Indoors, no smoking area with pets allowed)</p>
 
-      <h2>Name</h2>
+      <h2 className="lead-text">Name</h2>
       <p>John Doe</p>
 
-      <h2>Contact email</h2>
+      <h2 className="lead-text">Contact email</h2>
       <p>john.doe@email.com</p>
 
-      <h2>Comments</h2>
+      <h2 className="lead-text">Comments</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in
         consequat mi. Cras malesuada mi ligula, et rutrum metus dignissim ac.
@@ -112,7 +112,7 @@ const Overview = () => {
 
 const Kansha = () => (
   <div className="kansha-container">
-    <h1>Thank you!</h1>
+    <h1 className="display-title">Thank you!</h1>
     <p>
       A confirmation email will briefly be sent to john.doe@email.com with the
       reservation details.

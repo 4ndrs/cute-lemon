@@ -2,6 +2,16 @@
   background-color: var(--primary-green);
 }
 
+.hero .display-title {
+  color: var(--primary-yellow);
+  height: 55px;
+}
+
+.hero .sub-title,
+.hero .lead-text {
+  color: white;
+}
+
 .hero > header {
   grid-area: header;
 }
@@ -44,9 +54,16 @@
     ". image";
 }
 
-@media (max-width: 570px) {
+@media (max-width: 607px) {
   .hero > img {
     width: 31vw;
-    height: 28vh;
+    height: 17vh;
+  }
+
+  .hero {
+    grid-template-areas:
+      "header header"
+      "description image"
+      "reserve-button .";
   }
 }

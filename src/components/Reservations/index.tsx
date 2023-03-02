@@ -16,7 +16,7 @@ const Reservations = () => {
 const Header = () => (
   <div className="reservation-header">
     <button>←</button>
-    <h1>RESERVE A TABLE</h1>
+    <h1 className="section-title">RESERVE A TABLE</h1>
   </div>
 );
 

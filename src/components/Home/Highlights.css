@@ -41,6 +41,7 @@
   grid-area: special-card-description;
   white-space: normal;
   margin-bottom: 8px;
+  color: var(--primary-green);
 }
 
 .special-card .order-delivery {
@@ -58,6 +59,7 @@
 
 .special-card {
   display: inline-grid;
+  overflow: hidden;
   grid-template:
     "special-card-picture special-card-picture" min-content
     "special-card-title special-card-price" min-content
@@ -69,6 +71,17 @@
 
 .special-card:not(:last-child) {
   margin-right: 1.5rem;
+}
+
+@media (min-width: 570px) {
+  .special-card {
+    background-color: var(--secondary-grey);
+    border-radius: 8px;
+  }
+
+  .special-card > :not(:first-child) {
+    padding: 20px;
+  }
 }
 
 @media (max-width: 570px) {

@@ -1,5 +1,6 @@
 .highlights-background {
   background-color: white;
+  padding: 70px 0;
 }
 
 .highlights h3,
@@ -85,6 +86,9 @@
 }
 
 @media (max-width: 570px) {
+  .highlights-background {
+    padding: 41px 0;
+  }
   .specials {
     display: flex;
     flex-direction: column;

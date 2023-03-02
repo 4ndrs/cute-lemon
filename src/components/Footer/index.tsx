@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="footer-background outer-layout">
       <footer className="footer">
-        <img src={Logo} alt="Little Lemon logo" />
+        <img src={Logo} alt="Little Lemon logo" className="logo" />
 
         <nav aria-labelledby="doormat-navigation">
           <h2 id="doormat-navigation">Doormat Navigation</h2>
@@ -23,7 +23,8 @@ const Footer = () => {
         <div>
           <h2>Contact</h2>
           <div className="contact-info">
-            <div>2812 S Wenworth Ave Chicago IL 60616-2648</div>
+            <div>2812 S Wenworth Ave </div>
+            <div>Chicago IL 60616-2648</div>
             <div>(555) 555-1234</div>
             <div>info@little-lemon.com</div>
           </div>

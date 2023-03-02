@@ -1,5 +1,7 @@
 .hero-background {
-  background-color: var(--primary-green);
+  background-image: url(../../assets/green_bg.svg);
+  background-repeat: repeat-x;
+  padding: 29px 0;
 }
 
 .hero .display-title {
@@ -24,6 +26,7 @@
 .hero > p {
   grid-area: description;
   max-width: 247px;
+  margin: 10px 0 0 0;
 }
 
 .hero > button {
@@ -32,8 +35,8 @@
 
 .hero > img {
   grid-area: image;
-  max-width: 338px;
-  max-height: 398px;
+  width: 338px;
+  height: 398px;
   object-fit: cover;
   border-radius: 8px;
   justify-self: end;
@@ -54,7 +57,7 @@
     ". image";
 }
 
-@media (max-width: 607px) {
+@media (max-width: 730px) {
   .hero > img {
     width: 31vw;
     height: 17vh;
@@ -65,5 +68,13 @@
       "header header"
       "description image"
       "reserve-button .";
+  }
+
+  .hero-background {
+    background-color: var(--primary-green);
+  }
+
+  .hero > p {
+    margin: 10px 5px 0 0;
   }
 }

@@ -94,6 +94,7 @@ body {
 }
 
 .lemon-button {
+  cursor: pointer;
   width: 206px;
   height: 52px;
   border-radius: 16px;
@@ -114,6 +115,7 @@ body {
 .lemon-button:disabled {
   color: inherit;
   background-color: var(--secondary-color-one);
+  cursor: not-allowed;
 }
 
 @media (min-width: 905px) {

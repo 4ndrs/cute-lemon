@@ -12,7 +12,7 @@ const Highlights = () => (
     <section className="highlights">
       <header>
         <h1 className="section-title">This Week's Specials!</h1>
-        <button>Online Menu</button>
+        <button className="lemon-button">Online Menu</button>
       </header>
       <Specials />
     </section>

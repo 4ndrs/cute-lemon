@@ -68,7 +68,7 @@ const Form = () => {
 
       <div className="form-navigation">
         <div>1/2</div>
-        <button>Next</button>
+        <button className="lemon-button">Next</button>
       </div>
     </form>
   );
@@ -104,7 +104,7 @@ const Overview = () => {
 
       <div className="form-navigation">
         <div>2/2</div>
-        <button>Reserve</button>
+        <button className="lemon-button">Reserve</button>
       </div>
     </div>
   );
@@ -118,7 +118,7 @@ const Kansha = () => (
       reservation details.
     </p>
     <div className="form-navigation">
-      <button>Ok</button>
+      <button className="lemon-button">Ok</button>
     </div>
   </div>
 );

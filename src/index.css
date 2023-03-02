@@ -93,6 +93,29 @@ body {
   padding: var(--global-padding);
 }
 
+.lemon-button {
+  width: 206px;
+  height: 52px;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  color: inherit;
+  background-color: var(--primary-yellow);
+  font-family: Karla;
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+}
+
+.lemon-button:active {
+  color: white;
+  background-color: var(--primary-green);
+}
+
+.lemon-button:disabled {
+  color: inherit;
+  background-color: var(--secondary-color-one);
+}
+
 @media (min-width: 905px) {
   :root {
     --global-width: 900px;

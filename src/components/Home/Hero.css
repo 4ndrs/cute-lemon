@@ -31,6 +31,7 @@
 
 .hero > button {
   grid-area: reserve-button;
+  margin-top: 10px;
 }
 
 .hero > img {

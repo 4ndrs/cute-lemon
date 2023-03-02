@@ -13,50 +13,50 @@
 html {
   font-family: Karla;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
 }
 
 .display-title {
   font-family: Markazi Text;
   font-size: 64px;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 .sub-title {
   font-family: Markazi Text;
   font-size: 40px;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
 }
 
 .lead-text {
   font-family: Karla;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 .section-title {
   font-family: Karla;
   font-size: 20px;
-  font-weight: 800;
+  font-weight: var(--font-weight-extra-bold);
 }
 
 .card-description {
   font-family: Karla;
   font-size: 16px;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
 }
 
 .card-title {
   font-family: Karla;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .highlight-text {
   font-family: Karla;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 html,
@@ -74,6 +74,10 @@ body {
   --secondary-black: #333;
   --secondary-color-one: #ee9972;
   --secondary-color-two: #fbdabb;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
 }
 
 .outer-layout > * {

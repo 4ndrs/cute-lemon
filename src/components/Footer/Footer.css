@@ -22,7 +22,7 @@
 .footer h2 {
   font-family: Karla;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: white;
 }
 
@@ -39,7 +39,7 @@ a {
 .footer .contact-info {
   font-family: Karla;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
 }
 
 @media (max-width: 860px) {

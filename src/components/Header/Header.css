@@ -1,5 +1,6 @@
 .header-background {
   background-color: white;
+  padding: 20px 0;
   z-index: 1;
 }
 
@@ -24,7 +25,7 @@
   z-index: 1;
 }
 
-@media (max-width: 830px) {
+@media (max-width: 880px) {
   .hamburger {
     display: block;
   }
@@ -32,5 +33,6 @@
   .header-background {
     position: sticky;
     top: 0;
+    padding: 12px 0;
   }
 }

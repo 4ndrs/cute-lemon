@@ -23,7 +23,7 @@
   color: inherit;
 }
 
-@media (max-width: 830px) {
+@media (max-width: 880px) {
   .menu {
     flex-direction: column;
     width: 100%;

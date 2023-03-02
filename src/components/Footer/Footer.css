@@ -1,5 +1,6 @@
 .footer-background {
   background-color: var(--primary-green);
+  padding: 76px 0 111px;
 }
 
 .footer {
@@ -43,6 +44,10 @@ a {
 }
 
 @media (max-width: 860px) {
+  .footer-background {
+    padding: 20px 0 80px;
+  }
+
   .footer {
     flex-direction: column;
     align-items: flex-start;

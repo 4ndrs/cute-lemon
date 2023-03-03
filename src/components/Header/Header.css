@@ -22,12 +22,67 @@
 
 .hamburger {
   display: none;
-  z-index: 1;
+}
+
+.hamburger::before,
+.hamburger::after,
+.hamburger input {
+  content: "";
+  width: var(--hamburger-bars-width);
+  height: 3px;
+  border-radius: 16px;
+  background-color: var(--primary-green);
+  appearance: none;
+  margin: 0;
+  pointer-events: none;
+  transform-origin: left center;
+  transition: rotate 0.3s ease-in-out;
+}
+
+:root {
+  --hamburger-top-bar-degrees: 0;
+  --hamburger-bottom-bar-degrees: 0;
+  --hamburger-bars-width: 35px;
+}
+
+.hamburger input {
+  transition: opacity 0.4s;
+}
+
+.hamburger input:checked {
+  opacity: 0;
+}
+
+/*
+ * Firefox has no support (no pun intended)
+ * Need some JavaScript for this
+ *
+.hamburger:has(input:checked)::before {
+  rotate: 45deg;
+  width: 31px;
+}
+
+.hamburger:has(input:checked)::after {
+  rotate: -45deg;
+  width: 31px;
+}
+/**/
+
+.hamburger::before {
+  rotate: var(--hamburger-top-bar-degrees);
+}
+
+.hamburger::after {
+  rotate: var(--hamburger-bottom-bar-degrees);
 }
 
 @media (max-width: 880px) {
   .hamburger {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 1;
+    cursor: pointer;
   }
 
   .header-background {

@@ -4,7 +4,7 @@ import "./Nav.css";
 
 const Nav = () => {
   return (
-    <nav aria-label="primary-navigation" className="main-nav">
+    <nav aria-label="primary-navigation" className="main-nav" id="main-nav">
       <menu className="menu lead-text">
         {mainMenu.map((link) => (
           <li key={link.name}>

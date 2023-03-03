@@ -37,15 +37,18 @@
     top: 0;
     width: var(--sidenav-width);
     height: var(--sidenav-height);
-    padding: 4rem 1em;
-    background-color: grey;
+    padding: 6rem 1em;
+    background-color: white;
+    transition: left 0.3s ease-in-out;
   }
 
-  .hamburger:checked ~ .main-nav {
+  /*
+  .hamburger:has(input:checked) ~ .main-nav {
     left: -1rem;
   }
 
-  .hamburger:not(:checked) ~ .main-nav {
+  .hamburger:has(input:not(:checked)) ~ .main-nav {
     left: calc(var(--sidenav-width) * -2);
   }
+  */
 }

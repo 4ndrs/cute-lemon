@@ -8,7 +8,7 @@ import "./Header.css";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const oldScrollPosition = useRef<number>();
+  const oldScrollPosition = useRef(0);
 
   useEffect(() => {
     const style = document.documentElement.style;
@@ -42,10 +42,6 @@ const Header = () => {
   const checkScrollPosition = () => {
     const currentScrollPosition = window.scrollY;
     const header = document.getElementById("header-background");
-
-    if (oldScrollPosition.current === undefined) {
-      oldScrollPosition.current = 0;
-    }
 
     if (!header) {
       throw new Error("header-background not found! 💢");

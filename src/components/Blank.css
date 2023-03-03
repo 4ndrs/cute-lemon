@@ -1,0 +1,6 @@
+.blank {
+  width: var(--global-width);
+  margin: var(--global-margin);
+  padding: var(--global-padding);
+  height: 340px;
+}

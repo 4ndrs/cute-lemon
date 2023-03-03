@@ -106,7 +106,11 @@
 }
 
 .kansha-container {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  align-items: center;
+  height: 500px;
 }
 
 .form-container > :not(first-child) {

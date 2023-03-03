@@ -67,7 +67,7 @@ const Form = () => {
       </div>
 
       <div className="form-navigation">
-        <div>1/2</div>
+        <div className="page one"></div>
         <button className="lemon-button">Next</button>
       </div>
     </form>
@@ -103,7 +103,7 @@ const Overview = () => {
       </p>
 
       <div className="form-navigation">
-        <div>2/2</div>
+        <div className="page two"></div>
         <button className="lemon-button">Reserve</button>
       </div>
     </div>

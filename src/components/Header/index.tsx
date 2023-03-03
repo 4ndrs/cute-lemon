@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Nav from "./Nav";
 import Logo from "../../assets/logo.svg";
@@ -8,6 +8,7 @@ import "./Header.css";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const oldScrollPosition = useRef<number>();
 
   useEffect(() => {
     const style = document.documentElement.style;
@@ -32,8 +33,39 @@ const Header = () => {
     }
   }, [menuOpen]);
 
+  useEffect(() => {
+    window.addEventListener("scroll", checkScrollPosition);
+
+    return () => window.removeEventListener("scroll", checkScrollPosition);
+  }, []);
+
+  const checkScrollPosition = () => {
+    const currentScrollPosition = window.scrollY;
+    const header = document.getElementById("header-background");
+
+    if (oldScrollPosition.current === undefined) {
+      oldScrollPosition.current = 0;
+    }
+
+    if (!header) {
+      throw new Error("header-background not found! 💢");
+    }
+
+    const headerIsVisible = header.getBoundingClientRect().y > -1;
+
+    if (oldScrollPosition.current < currentScrollPosition && headerIsVisible) {
+      header.style.transform = `translateY(-100%)`;
+    } else if (
+      oldScrollPosition.current > currentScrollPosition &&
+      !headerIsVisible
+    ) {
+      header.style.transform = `translateY(0%)`;
+    }
+    oldScrollPosition.current = currentScrollPosition;
+  };
+
   return (
-    <div className="header-background outer-layout">
+    <div className="header-background outer-layout" id="header-background">
       <header className="header">
         <label className="hamburger">
           <input

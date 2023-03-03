@@ -1,6 +1,9 @@
 .header-background {
+  position: sticky;
+  top: 0;
   background-color: white;
   padding: 20px 0;
+  transition: transform 0.3s ease-in-out;
   z-index: 1;
 }
 
@@ -86,8 +89,6 @@
   }
 
   .header-background {
-    position: sticky;
-    top: 0;
     padding: 12px 0;
   }
 }

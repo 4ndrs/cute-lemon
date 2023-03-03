@@ -6,10 +6,37 @@
 
 .reservations-background {
   background-color: var(--secondary-grey);
+  padding-top: 51px;
+  padding-bottom: 61px;
 }
 
 .reservation-header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 44px;
+}
+
+.reservation-header > h1 {
+  margin: 0;
+}
+
+.reservation-header > button {
+  margin-right: 73px;
+}
+
+@media (max-width: 447px) {
+  .reservations-background {
+    background-color: var(--secondary-grey);
+    padding-top: 21px;
+    padding-bottom: 31px;
+  }
+
+  .reservation-header {
+    margin-bottom: 22px;
+  }
+
+  .reservation-header > button {
+    margin-right: 20px;
+  }
 }

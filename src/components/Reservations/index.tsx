@@ -1,4 +1,5 @@
 import Form from "./Form";
+import BackButton from "../BackButton";
 
 import "./Reservations.css";
 
@@ -15,7 +16,7 @@ const Reservations = () => {
 
 const Header = () => (
   <div className="reservation-header">
-    <button>←</button>
+    <BackButton />
     <h1 className="section-title">RESERVE A TABLE</h1>
   </div>
 );

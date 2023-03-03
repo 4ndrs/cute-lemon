@@ -1,6 +1,6 @@
-import ClockIcon from "../../assets/clock.svg";
-import CalendarIcon from "../../assets/calendar.svg";
-import InfoIcon from "../../assets/info.svg";
+import { ReactComponent as ClockIcon } from "../../assets/clock.svg";
+import { ReactComponent as CalendarIcon } from "../../assets/calendar.svg";
+import { ReactComponent as InfoIcon } from "../../assets/info.svg";
 
 import "./Form.css";
 
@@ -8,12 +8,12 @@ const Form = () => {
   return (
     <form className="form-container">
       <div className="date-field">
-        <img src={CalendarIcon} alt="Calendar" className="calendar-icon" />
+        <CalendarIcon className="calendar-icon" />
         <label>Date</label>
         <input type="date" />
       </div>
       <div className="clock-field">
-        <img src={ClockIcon} alt="Clock" className="clock-icon" />
+        <ClockIcon className="clock-icon" />
         <label>Time</label>
         <input type="time" />
       </div>
@@ -51,18 +51,18 @@ const Form = () => {
       <div className="more-info">
         <label>Additional information</label>
         <a href="#TBD">
-          <img src={InfoIcon} alt="Information" className="info-icon" />
+          <InfoIcon className="info-icon" />
         </a>
       </div>
 
       <div className="text-fields">
         <label>Your name</label>
-        <input />
+        <input type="text" />
 
         <label>Email</label>
-        <input />
+        <input type="text" />
 
-        <label>Comments</label>
+        <label>Comments (optional)</label>
         <textarea rows={5} cols={33} />
       </div>
 

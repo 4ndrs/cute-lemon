@@ -72,6 +72,44 @@ body {
   padding: 0;
 }
 
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+  border-width: 2px;
+  border-color: var(--primary-green);
+  outline: none;
+  font-family: karla;
+  font-size: 16px;
+  font-weight: var(--font-weight-regular);
+  border-radius: 16px;
+  background-color: white;
+  resize: none;
+  padding: 5px;
+}
+
+select {
+  height: 35px;
+}
+
+input[type="date"],
+input[type="time"] {
+  display: flex;
+  justify-content: center;
+}
+
+input[type="text"],
+textarea {
+  border-radius: 8px;
+}
+
+input[type="date"],
+input[type="time"],
+select {
+  text-align: center;
+}
+
 :root {
   --global-margin: 0 auto;
   --global-padding: 0;

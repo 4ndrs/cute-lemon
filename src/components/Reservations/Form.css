@@ -11,6 +11,18 @@
 .info-icon {
   width: 14px;
   height: 14px;
+  margin-left: 5px;
+}
+
+.calendar-icon,
+.clock-icon,
+.info-icon {
+  fill: var(--primary-green);
+}
+
+.calendar-icon,
+.clock-icon {
+  margin-right: 15px;
 }
 
 .form-container,
@@ -58,10 +70,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 49px !important;
 }
 
 .kansha-container {
   text-align: center;
+}
+
+.form-container > :not(first-child) {
+  margin-top: 8px;
+}
+
+.form-container > h2.lead-text {
+  margin-top: 40px;
+}
+
+.form-container > .text-fields > label:not(:first-child) {
+  margin-top: 31px;
+}
+
+.form-container > .text-fields > input[type="text"],
+.form-container > .text-fields > textarea {
+  margin-top: 11px;
 }
 
 @media (max-width: 447px) {

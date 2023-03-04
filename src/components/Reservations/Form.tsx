@@ -1,12 +1,35 @@
+import { Route, Routes, useNavigate } from "react-router-dom";
+
+import NotFound from "../NotFound";
+
 import { ReactComponent as ClockIcon } from "../../assets/clock.svg";
 import { ReactComponent as CalendarIcon } from "../../assets/calendar.svg";
 import { ReactComponent as InfoIcon } from "../../assets/info.svg";
 
 import "./Form.css";
 
-const Form = () => {
+const Form = () => (
+  <>
+    <Routes>
+      <Route index element={<FormContainer />} />
+      <Route path="/overview" element={<Overview />} />
+      <Route path="/thanks" element={<Kansha />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </>
+);
+
+const FormContainer = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+
+    navigate("/book/overview");
+  };
+
   return (
-    <form className="form-container">
+    <form onSubmit={handleSubmit} className="form-container">
       <div className="date-field">
         <CalendarIcon className="calendar-icon" />
         <label>Date</label>
@@ -75,6 +98,8 @@ const Form = () => {
 };
 
 const Overview = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="overview-container">
       <h2 className="lead-text">Time and Date</h2>
@@ -104,23 +129,34 @@ const Overview = () => {
 
       <div className="form-navigation">
         <div className="page two"></div>
-        <button className="lemon-button">Reserve</button>
+        <button
+          className="lemon-button"
+          onClick={() => navigate("/book/thanks")}
+        >
+          Reserve
+        </button>
       </div>
     </div>
   );
 };
 
-const Kansha = () => (
-  <div className="kansha-container">
-    <h1 className="display-title">Thank you!</h1>
-    <p>
-      A confirmation email will briefly be sent to john.doe@email.com with the
-      reservation details.
-    </p>
-    <div className="form-navigation">
-      <button className="lemon-button">Ok</button>
+const Kansha = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div className="kansha-container">
+      <h1 className="display-title">Thank you!</h1>
+      <p>
+        A confirmation email will briefly be sent to john.doe@email.com with the
+        reservation details.
+      </p>
+      <div className="form-navigation">
+        <button className="lemon-button" onClick={() => navigate("/")}>
+          Ok
+        </button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Form;

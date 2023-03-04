@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { mainMenu } from "../../links";
 
 import "./Nav.css";
@@ -8,7 +9,7 @@ const Nav = () => {
       <menu className="menu lead-text">
         {mainMenu.map((link) => (
           <li key={link.name}>
-            <a href={link.href}>{link.name.toUpperCase()}</a>
+            <Link to={link.href}>{link.name.toUpperCase()}</Link>
           </li>
         ))}
       </menu>

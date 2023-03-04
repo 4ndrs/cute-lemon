@@ -1,7 +1,7 @@
 const mainMenu = [
   {
     name: "Home",
-    href: "#",
+    href: "/",
   },
   {
     name: "About",

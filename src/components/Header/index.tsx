@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { useHamburger } from "../../context/hamburger";
 
 import Nav from "./Nav";
 import Logo from "../../assets/logo.svg";
@@ -7,7 +8,7 @@ import BasketIcon from "../../assets/basket.svg";
 import "./Header.css";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { hamburgerOpen, toggleHamburger } = useHamburger();
   const oldScrollPosition = useRef(0);
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const Header = () => {
       throw new Error("Woohoo! The main-nav was not found 💢");
     }
 
-    if (menuOpen) {
+    if (hamburgerOpen) {
       style.setProperty("--hamburger-top-bar-degrees", "45deg");
       style.setProperty("--hamburger-bottom-bar-degrees", "-45deg");
       style.setProperty("--hamburger-bars-width", "31px");
@@ -31,7 +32,7 @@ const Header = () => {
 
       sidebar.style.left = "calc(var(--sidenav-width) * -1.2)";
     }
-  }, [menuOpen]);
+  }, [hamburgerOpen]);
 
   useEffect(() => {
     window.addEventListener("scroll", checkScrollPosition);
@@ -66,8 +67,8 @@ const Header = () => {
         <label className="hamburger">
           <input
             type="checkbox"
-            checked={menuOpen}
-            onChange={() => setMenuOpen((previous) => !previous)}
+            checked={hamburgerOpen}
+            onChange={() => toggleHamburger()}
           />
         </label>
         <img src={Logo} alt="Little Lemon logo" className="logo" />

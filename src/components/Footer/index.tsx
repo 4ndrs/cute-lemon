@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { mainMenu, socials } from "../../links";
 import Logo from "../../assets/logo2.png";
 
@@ -14,7 +16,7 @@ const Footer = () => {
           <menu className="lead-text">
             {mainMenu.map((link) => (
               <li key={link.name}>
-                <a href={link.href}>{link.name}</a>
+                <Link to={link.href}>{link.name}</Link>
               </li>
             ))}
           </menu>

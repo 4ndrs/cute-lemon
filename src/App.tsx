@@ -10,15 +10,19 @@ const App = () => {
   useScrollReset();
 
   return (
-    <HamburgerProvider>
-      <Header />
+    <>
+      <HamburgerProvider>
+        <Header />
+      </HamburgerProvider>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/book/*" element={<Reservations />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+
       <Footer />
-    </HamburgerProvider>
+    </>
   );
 };
 

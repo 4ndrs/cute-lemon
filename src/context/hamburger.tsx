@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useState } from "react";
 
 interface TastyBurger {
   hamburgerOpen: boolean;
@@ -13,8 +13,13 @@ const HamburgerContext = createContext<TastyBurger | undefined>(undefined);
 const HamburgerProvider = ({ children }: { children: React.ReactNode }) => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
-  const toggleHamburger = () => setHamburgerOpen((previous) => !previous);
-  const value = { hamburgerOpen, toggleHamburger };
+  const value = {
+    hamburgerOpen,
+    toggleHamburger: useCallback(
+      () => setHamburgerOpen((previous) => !previous),
+      []
+    ),
+  };
 
   return (
     <HamburgerContext.Provider value={value}>

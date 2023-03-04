@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import { useHamburger } from "../../context/hamburger";
 
+import useClickOutsideSidebar from "../../hooks/useClickOutsideSidebar";
+
 import Nav from "./Nav";
 import Logo from "../../assets/logo.svg";
 import BasketIcon from "../../assets/basket.svg";
@@ -10,6 +12,8 @@ import "./Header.css";
 const Header = () => {
   const { hamburgerOpen, toggleHamburger } = useHamburger();
   const oldScrollPosition = useRef(0);
+
+  useClickOutsideSidebar();
 
   useEffect(() => {
     const style = document.documentElement.style;

@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useHamburger } from "../context/hamburger";
 
 /**
@@ -6,11 +7,11 @@ import { useHamburger } from "../context/hamburger";
 const useCloseSidebar = () => {
   const { hamburgerOpen, toggleHamburger } = useHamburger();
 
-  return () => {
+  return useCallback(() => {
     if (hamburgerOpen) {
       toggleHamburger();
     }
-  };
+  }, [hamburgerOpen, toggleHamburger]);
 };
 
 export default useCloseSidebar;

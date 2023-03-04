@@ -1,6 +1,4 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
-
-import NotFound from "../NotFound";
+import { useNavigate } from "react-router-dom";
 
 import { ReactComponent as ClockIcon } from "../../assets/clock.svg";
 import { ReactComponent as CalendarIcon } from "../../assets/calendar.svg";
@@ -8,18 +6,7 @@ import { ReactComponent as InfoIcon } from "../../assets/info.svg";
 
 import "./Form.css";
 
-const Form = () => (
-  <>
-    <Routes>
-      <Route index element={<FormContainer />} />
-      <Route path="/overview" element={<Overview />} />
-      <Route path="/thanks" element={<Kansha />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  </>
-);
-
-const FormContainer = () => {
+const Form = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent) => {
@@ -94,68 +81,6 @@ const FormContainer = () => {
         <button className="lemon-button">Next</button>
       </div>
     </form>
-  );
-};
-
-const Overview = () => {
-  const navigate = useNavigate();
-
-  return (
-    <div className="overview-container">
-      <h2 className="lead-text">Time and Date</h2>
-      <p>08:30 PM 2023/02/28</p>
-
-      <h2 className="lead-text">Diners</h2>
-      <p>2</p>
-
-      <h2 className="lead-text">Occasion</h2>
-      <p>Standard</p>
-
-      <h2 className="lead-text">Area</h2>
-      <p>Storefront (Indoors, no smoking area with pets allowed)</p>
-
-      <h2 className="lead-text">Name</h2>
-      <p>John Doe</p>
-
-      <h2 className="lead-text">Contact email</h2>
-      <p>john.doe@email.com</p>
-
-      <h2 className="lead-text">Comments</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in
-        consequat mi. Cras malesuada mi ligula, et rutrum metus dignissim ac.
-        Fusce sed semper leo, eget efficitur metus.
-      </p>
-
-      <div className="form-navigation">
-        <div className="page two"></div>
-        <button
-          className="lemon-button"
-          onClick={() => navigate("/book/thanks")}
-        >
-          Reserve
-        </button>
-      </div>
-    </div>
-  );
-};
-
-const Kansha = () => {
-  const navigate = useNavigate();
-
-  return (
-    <div className="kansha-container">
-      <h1 className="display-title">Thank you!</h1>
-      <p>
-        A confirmation email will briefly be sent to john.doe@email.com with the
-        reservation details.
-      </p>
-      <div className="form-navigation">
-        <button className="lemon-button" onClick={() => navigate("/")}>
-          Ok
-        </button>
-      </div>
-    </div>
   );
 };
 

@@ -1,7 +1,10 @@
-import { useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 import Form from "./Form";
 import Blank from "../Blank";
+import Kansha from "./Kansha";
+import Overview from "./Overview";
+import NotFound from "../NotFound";
 import BackButton from "../BackButton";
 
 import "./Reservations.css";
@@ -12,7 +15,12 @@ const Reservations = () => {
       <div className="reservations-background">
         <main>
           <Header />
-          <Form />
+          <Routes>
+            <Route index element={<Form />} />
+            <Route path="/overview" element={<Overview />} />
+            <Route path="/thanks" element={<Kansha />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </main>
       </div>
       <Blank />

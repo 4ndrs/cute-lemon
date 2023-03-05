@@ -73,7 +73,18 @@
   font-size: 12px;
 }
 
-.form-container > .text-fields {
+.form-container fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.form-container fieldset > legend {
+  padding: 0;
+  margin: 0;
+}
+
+.form-container fieldset > .text-fields {
   display: flex;
   flex-direction: column;
 }
@@ -125,20 +136,21 @@
   height: 500px;
 }
 
-.form-container > :not(first-child) {
+.form-container > :not(first-child),
+.form-container fieldset > * {
   margin-top: 8px;
 }
 
-.form-container > h2.lead-text {
+.form-container fieldset {
   margin-top: 40px;
 }
 
-.form-container > .text-fields > label:not(:first-child) {
+.form-container fieldset > .text-fields > label:not(:first-child) {
   margin-top: 31px;
 }
 
-.form-container > .text-fields > input,
-.form-container > .text-fields > textarea {
+.form-container fieldset > .text-fields > input,
+.form-container fieldset > .text-fields > textarea {
   margin-top: 11px;
 }
 

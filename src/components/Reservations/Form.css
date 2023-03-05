@@ -41,14 +41,26 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
-.date-field > :last-child,
-.clock-field > :last-child,
-.diners-field > :last-child,
-.occasion-field > :last-child,
-.area-field > :last-child {
+.date-field > input,
+.clock-field > input,
+.diners-field > select,
+.occasion-field > select,
+.area-field > select {
   margin-left: auto;
+}
+
+.date-field > .messages,
+.clock-field > .messages,
+.diners-field > .messages,
+.occasion-field > .messages,
+.area-field > .messages {
+  flex-basis: 100%;
+  text-align: right;
+  padding-right: 1em;
+  color: red;
 }
 
 .area-field + .more-info {

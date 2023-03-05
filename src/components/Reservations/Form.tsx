@@ -37,7 +37,11 @@ const Form = () => {
           className={errors.date && "invalid-input"}
           {...register("date", { required })}
         />
+        <label htmlFor="date" className="messages">
+          {errors.date?.message}
+        </label>
       </div>
+
       <div className="clock-field">
         <ClockIcon className="clock-icon" />
         <label htmlFor="time">Time</label>
@@ -47,6 +51,9 @@ const Form = () => {
           className={errors.time && "invalid-input"}
           {...register("time", { required })}
         />
+        <label htmlFor="time" className="messages">
+          {errors.time?.message}
+        </label>
       </div>
 
       <h2 className="lead-text">Details</h2>
@@ -62,6 +69,9 @@ const Form = () => {
           <option>4</option>
           <option>6</option>
         </select>
+        <label htmlFor="diners" className="messages">
+          {errors.diners?.message}
+        </label>
       </div>
 
       <div className="occasion-field">
@@ -76,6 +86,9 @@ const Form = () => {
           <option>Anniversary</option>
           <option>Engagement</option>
         </select>
+        <label htmlFor="occasion" className="messages">
+          {errors.occasion?.message}
+        </label>
       </div>
 
       <div className="area-field">
@@ -90,6 +103,9 @@ const Form = () => {
           <option>Indoors (Zone A)</option>
           <option>Indoors (Zone B)</option>
         </select>
+        <label htmlFor="area" className="messages">
+          {errors.area?.message}
+        </label>
       </div>
       <div className="more-info">
         <label htmlFor="info">Additional information</label>

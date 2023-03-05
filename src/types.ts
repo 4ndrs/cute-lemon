@@ -14,3 +14,22 @@ export type Comment = Readonly<{
   comment: string;
   rating: number;
 }>;
+
+export interface FormData {
+  date: string;
+  time: string;
+  diners: number;
+  occasion: Occasion;
+  area: Area;
+  name: string;
+  email: string;
+  comments: string;
+}
+
+type Area =
+  | "Storefront (Indoors)"
+  | "Storefront (Outdoors)"
+  | "Indoors (Zone A)"
+  | "Indoors (Zone B)";
+
+type Occasion = "Standard" | "Birthday" | "Anniversary" | "Engagement";

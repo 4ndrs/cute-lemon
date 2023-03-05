@@ -73,10 +73,12 @@ body {
 }
 
 input[type="text"],
+input[type="email"],
 input[type="date"],
 input[type="time"],
 select,
 textarea {
+  border-style: solid;
   border-width: 2px;
   border-color: var(--primary-green);
   outline: none;
@@ -100,6 +102,7 @@ input[type="time"] {
 }
 
 input[type="text"],
+input[type="email"],
 textarea {
   border-radius: 8px;
 }

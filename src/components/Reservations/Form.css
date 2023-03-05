@@ -125,9 +125,14 @@
   margin-top: 31px;
 }
 
-.form-container > .text-fields > input[type="text"],
+.form-container > .text-fields > input,
 .form-container > .text-fields > textarea {
   margin-top: 11px;
+}
+
+.form-container .invalid-input {
+  border-color: red;
+  color: red;
 }
 
 @media (max-width: 447px) {

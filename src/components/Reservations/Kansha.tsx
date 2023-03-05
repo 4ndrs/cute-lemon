@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useBooking } from "../../context/booking";
 
@@ -9,6 +10,12 @@ const Kansha = () => {
       formData: { email },
     },
   } = useBooking();
+
+  useEffect(() => {
+    if (!email) {
+      navigate("/book");
+    }
+  }, [navigate, email]);
 
   return (
     <div className="kansha-container">

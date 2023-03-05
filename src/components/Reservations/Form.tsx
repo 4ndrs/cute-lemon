@@ -16,7 +16,7 @@ const Form = () => {
   const navigate = useNavigate();
 
   const {
-    state: { formData: defaultValues },
+    state: { formData: defaultValues, isSubmitted },
   } = useBooking();
 
   const {
@@ -39,6 +39,7 @@ const Form = () => {
         <CalendarIcon className="calendar-icon" />
         <label htmlFor="date">Date</label>
         <input
+          readOnly={isSubmitted}
           type="date"
           id="date"
           className={errors.date && "invalid-input"}
@@ -53,6 +54,7 @@ const Form = () => {
         <ClockIcon className="clock-icon" />
         <label htmlFor="time">Time</label>
         <input
+          readOnly={isSubmitted}
           type="time"
           id="time"
           className={errors.time && "invalid-input"}
@@ -63,7 +65,7 @@ const Form = () => {
         </label>
       </div>
 
-      <fieldset>
+      <fieldset disabled={isSubmitted}>
         <legend className="lead-text">Details</legend>
 
         <div className="diners-field">

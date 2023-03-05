@@ -4,6 +4,7 @@ import type { FormData } from "../types";
 
 type Action =
   | { type: "update"; payload: FormData }
+  | { type: "reset" }
   | { type: "submit" }
   | { type: "cancel" };
 
@@ -16,8 +17,9 @@ const bookingReducer = (state: State, action: Action) => {
       return { ...state, isSubmitted: true };
     case "cancel":
       return { ...state, isSubmitted: false };
+    case "reset":
+      return { ...state, formData: { ...initialState.formData } };
     case "update":
-      // console.log("updating", Date.now());
       return { ...state, formData: { ...action.payload } };
 
     default:

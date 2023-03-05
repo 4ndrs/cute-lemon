@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useBooking } from "../../context/booking";
 
@@ -5,8 +6,23 @@ const Overview = () => {
   const navigate = useNavigate();
 
   const {
-    state: { formData },
+    dispatch,
+    state: { formData, isSubmitted },
   } = useBooking();
+
+  useEffect(() => {
+    if (!isSubmitted && !formData.name) {
+      navigate("/book");
+    }
+  }, [navigate, isSubmitted, formData.name]);
+
+  const handleReserve = () => {
+    dispatch({ type: "submit" });
+
+    navigate("/book/thanks");
+  };
+
+  const handleCancel = () => dispatch({ type: "cancel" });
 
   return (
     <div className="overview-container">
@@ -37,13 +53,19 @@ const Overview = () => {
         </>
       )}
 
+      {isSubmitted && (
+        <div style={{ marginTop: "2em" }}>
+          <strong>Reservation status:</strong> Awaiting email confirmation
+        </div>
+      )}
+
       <div className="form-navigation">
         <div className="page two"></div>
         <button
           className="lemon-button"
-          onClick={() => navigate("/book/thanks")}
+          onClick={isSubmitted ? handleCancel : handleReserve}
         >
-          Reserve
+          {isSubmitted ? "Cancel" : "Reserve"}
         </button>
       </div>
     </div>

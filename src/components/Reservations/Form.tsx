@@ -57,6 +57,8 @@ const Form = () => {
           readOnly={isSubmitted}
           type="time"
           id="time"
+          min="17:00"
+          max="22:00"
           className={errors.time && "invalid-input"}
           {...register("time", { required })}
         />

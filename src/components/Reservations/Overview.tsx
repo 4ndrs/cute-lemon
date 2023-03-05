@@ -1,34 +1,41 @@
 import { useNavigate } from "react-router-dom";
+import { useBooking } from "../../context/booking";
 
 const Overview = () => {
   const navigate = useNavigate();
 
+  const {
+    state: { formData },
+  } = useBooking();
+
   return (
     <div className="overview-container">
       <h2 className="lead-text">Time and Date</h2>
-      <p>08:30 PM 2023/02/28</p>
+      <p>
+        {formData.time} {new Date(formData.date).toLocaleDateString()}
+      </p>
 
       <h2 className="lead-text">Diners</h2>
-      <p>2</p>
+      <p>{formData.diners}</p>
 
       <h2 className="lead-text">Occasion</h2>
-      <p>Standard</p>
+      <p>{formData.occasion}</p>
 
       <h2 className="lead-text">Area</h2>
-      <p>Storefront (Indoors, no smoking area with pets allowed)</p>
+      <p>{formData.area}</p>
 
       <h2 className="lead-text">Name</h2>
-      <p>John Doe</p>
+      <p>{formData.name}</p>
 
       <h2 className="lead-text">Contact email</h2>
-      <p>john.doe@email.com</p>
+      <p>{formData.email}</p>
 
-      <h2 className="lead-text">Comments</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in
-        consequat mi. Cras malesuada mi ligula, et rutrum metus dignissim ac.
-        Fusce sed semper leo, eget efficitur metus.
-      </p>
+      {formData.comments && (
+        <>
+          <h2 className="lead-text">Comments</h2>
+          <p>{formData.comments}</p>
+        </>
+      )}
 
       <div className="form-navigation">
         <div className="page two"></div>

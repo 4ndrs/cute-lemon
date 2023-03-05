@@ -1,13 +1,20 @@
 import { useNavigate } from "react-router-dom";
+import { useBooking } from "../../context/booking";
 
 const Kansha = () => {
   const navigate = useNavigate();
+
+  const {
+    state: {
+      formData: { email },
+    },
+  } = useBooking();
 
   return (
     <div className="kansha-container">
       <h1 className="display-title">Thank you!</h1>
       <p>
-        A confirmation email will briefly be sent to john.doe@email.com with the
+        A confirmation email will briefly be sent to {email} with the
         reservation details.
       </p>
       <div className="form-navigation">

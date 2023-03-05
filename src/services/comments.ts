@@ -52,7 +52,7 @@ const commentsData: Comment[] = [
 ];
 
 const getComments = async () => {
-  await sleep(2);
+  await sleep(0);
 
   return commentsData;
 };

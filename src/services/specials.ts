@@ -39,7 +39,7 @@ const dishesData: Dish[] = [
 ];
 
 const getSpecials = async () => {
-  await sleep(2);
+  await sleep(0);
 
   return dishesData;
 };

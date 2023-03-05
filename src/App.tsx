@@ -2,6 +2,8 @@ import { Route, Routes } from "react-router-dom";
 
 import { Header, Footer, Home, Reservations } from "./components";
 import { HamburgerProvider } from "./context/hamburger";
+import { BookingProvider } from "./context/booking";
+
 import NotFound from "./components/NotFound";
 
 import useScrollReset from "./hooks/useScrollReset";
@@ -15,11 +17,13 @@ const App = () => {
         <Header />
       </HamburgerProvider>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/book/*" element={<Reservations />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <BookingProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/book/*" element={<Reservations />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BookingProvider>
 
       <Footer />
     </>

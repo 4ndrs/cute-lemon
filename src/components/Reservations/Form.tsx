@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
+import { useBooking } from "../../context/booking";
+import useDispatchForm from "../../hooks/useDispatchForm";
+
 import { ReactComponent as ClockIcon } from "../../assets/clock.svg";
 import { ReactComponent as CalendarIcon } from "../../assets/calendar.svg";
 import { ReactComponent as InfoIcon } from "../../assets/info.svg";
@@ -10,24 +13,28 @@ import "./Form.css";
 import type { FormData } from "../../types";
 
 const Form = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>({ mode: "onBlur" });
-
   const navigate = useNavigate();
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
+  const {
+    state: { formData: defaultValues },
+  } = useBooking();
 
-    navigate("/book/overview");
-  });
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({ mode: "onBlur", defaultValues });
+
+  useDispatchForm(control);
 
   const required = "Required";
 
   return (
-    <form onSubmit={onSubmit} className="form-container">
+    <form
+      onSubmit={handleSubmit(() => navigate("/book/overview"))}
+      className="form-container"
+    >
       <div className="date-field">
         <CalendarIcon className="calendar-icon" />
         <label htmlFor="date">Date</label>

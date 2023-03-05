@@ -123,6 +123,9 @@ const Form = () => {
             className={errors.name && "invalid-input"}
             {...register("name", { required })}
           />
+          <label htmlFor="name" className="messages">
+            {errors.name?.message}
+          </label>
 
           <label htmlFor="email">Email</label>
           <input
@@ -131,6 +134,9 @@ const Form = () => {
             className={errors.email && "invalid-input"}
             {...register("email", { required })}
           />
+          <label htmlFor="email" className="messages">
+            {errors.email?.message}
+          </label>
 
           <label htmlFor="comments">Comments (optional)</label>
           <textarea
@@ -140,6 +146,9 @@ const Form = () => {
             className={errors.comments && "invalid-input"}
             {...register("comments")}
           />
+          <label htmlFor="comments" className="messages">
+            {errors.comments?.message}
+          </label>
         </div>
       </fieldset>
 

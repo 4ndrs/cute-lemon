@@ -145,7 +145,12 @@
   margin-top: 40px;
 }
 
-.form-container fieldset > .text-fields > label:not(:first-child) {
+.form-container fieldset > .text-fields > .messages {
+  color: red;
+  margin: 0.2em 0.3em;
+}
+
+.form-container fieldset > .text-fields > label:not(:first-child, .messages) {
   margin-top: 31px;
 }
 

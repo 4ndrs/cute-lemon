@@ -53,15 +53,19 @@ const Form = () => {
       <div className="clock-field">
         <ClockIcon className="clock-icon" />
         <label htmlFor="time">Time</label>
-        <input
-          readOnly={isSubmitted}
-          type="time"
+        <select
+          disabled={isSubmitted}
           id="time"
-          min="17:00"
-          max="22:00"
           className={errors.time && "invalid-input"}
           {...register("time", { required })}
-        />
+        >
+          <option>17:00</option>
+          <option>18:00</option>
+          <option>19:00</option>
+          <option>20:00</option>
+          <option>21:00</option>
+          <option>22:00</option>
+        </select>
         <label htmlFor="time" className="messages">
           {errors.time?.message}
         </label>

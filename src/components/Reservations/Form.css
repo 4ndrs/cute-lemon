@@ -45,7 +45,7 @@
 }
 
 .date-field > input,
-.clock-field > input,
+.clock-field > select,
 .diners-field > select,
 .occasion-field > select,
 .area-field > select {

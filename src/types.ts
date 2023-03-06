@@ -37,7 +37,10 @@ interface Area {
 }
 
 type AvailableTables = {
-  [seats in Seats]: number;
+  [seats in Seats]: {
+    tables: number;
+    times: string[];
+  };
 };
 
 type AreaName =

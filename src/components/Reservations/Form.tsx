@@ -1,7 +1,10 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 import { useBooking } from "../../context/booking";
+import { getAvailableTables } from "../../services/restaurant";
+
 import useDispatchForm from "../../hooks/useDispatchForm";
 
 import { ReactComponent as ClockIcon } from "../../assets/clock.svg";
@@ -10,16 +13,22 @@ import { ReactComponent as InfoIcon } from "../../assets/info.svg";
 
 import "./Form.css";
 
-import type { FormData } from "../../types";
+import type { FormData, Restaurant } from "../../types";
 
 const Form = () => {
   const navigate = useNavigate();
+
+  const [isFetching, setIsFetching] = useState(false);
+
+  const [availableTables, setAvailableTables] =
+    useState<Readonly<Restaurant>>();
 
   const {
     state: { formData: defaultValues, isSubmitted },
   } = useBooking();
 
   const {
+    watch,
     register,
     control,
     handleSubmit,
@@ -28,7 +37,37 @@ const Form = () => {
 
   useDispatchForm(control);
 
+  const watchDate = watch("date");
+  const watchArea = watch("area");
+  const watchDiners = watch("diners");
+
+  useEffect(() => {
+    if (!isSubmitted) {
+      fetchAvailableTables(watchDate);
+    }
+  }, [watchDate, isSubmitted]);
+
+  const fetchAvailableTables = async (date?: string) => {
+    let dateObject: Date;
+
+    if (!date) {
+      dateObject = new Date(); // set today's date if empty string
+    } else if (isNaN(new Date(date).getDate())) {
+      throw new Error("Invalid date provided");
+    } else {
+      dateObject = new Date(date);
+    }
+
+    setIsFetching(true);
+    const data = await getAvailableTables(dateObject);
+    setIsFetching(false);
+
+    setAvailableTables(data);
+  };
+
   const required = "Required";
+
+  const isLoading = !availableTables || isFetching;
 
   return (
     <form
@@ -54,17 +93,18 @@ const Form = () => {
         <ClockIcon className="clock-icon" />
         <label htmlFor="time">Time</label>
         <select
-          disabled={isSubmitted}
+          disabled={isSubmitted || isLoading}
           id="time"
           className={errors.time && "invalid-input"}
           {...register("time", { required })}
         >
-          <option>17:00</option>
-          <option>18:00</option>
-          <option>19:00</option>
-          <option>20:00</option>
-          <option>21:00</option>
-          <option>22:00</option>
+          {isLoading ? (
+            <option key={defaultValues.time}>{defaultValues.time}</option>
+          ) : (
+            availableTables[watchArea].availableTables[watchDiners].times.map(
+              (time) => <option key={time}>{time}</option>
+            )
+          )}
         </select>
         <label htmlFor="time" className="messages">
           {errors.time?.message}
@@ -77,13 +117,18 @@ const Form = () => {
         <div className="diners-field">
           <label htmlFor="diners">Diners</label>
           <select
+            disabled={isLoading}
             id="diners"
             className={errors.diners && "invalid-input"}
             {...register("diners", { required })}
           >
-            <option>2</option>
-            <option>4</option>
-            <option>6</option>
+            {isLoading ? (
+              <option key={defaultValues.diners}>{defaultValues.diners}</option>
+            ) : (
+              Object.keys(availableTables[watchArea].availableTables).map(
+                (seats) => <option key={seats}>{seats}</option>
+              )
+            )}
           </select>
           <label htmlFor="diners" className="messages">
             {errors.diners?.message}
@@ -110,14 +155,18 @@ const Form = () => {
         <div className="area-field">
           <label htmlFor="area">Area</label>
           <select
+            disabled={isLoading}
             id="area"
             className={errors.area && "invalid-input"}
             {...register("area", { required })}
           >
-            <option>Storefront (Indoors)</option>
-            <option>Storefront (Outdoors)</option>
-            <option>Indoors (Zone A)</option>
-            <option>Indoors (Zone B)</option>
+            {isLoading ? (
+              <option key={defaultValues.area}>{defaultValues.area}</option>
+            ) : (
+              Object.keys(availableTables).map((area) => (
+                <option key={area}>{area}</option>
+              ))
+            )}
           </select>
           <label htmlFor="area" className="messages">
             {errors.area?.message}
@@ -169,7 +218,7 @@ const Form = () => {
 
       <div className="form-navigation">
         <div className="page one"></div>
-        <button className="lemon-button" type="submit">
+        <button disabled={isFetching} className="lemon-button" type="submit">
           Next
         </button>
       </div>

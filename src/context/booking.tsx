@@ -34,7 +34,7 @@ const assertNever = (value: never) => {
 const initialState: State = {
   formData: {
     date: "",
-    time: "",
+    time: "17:00",
     diners: 2,
     occasion: "Standard",
     area: "Storefront (Indoors)",

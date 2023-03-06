@@ -18,18 +18,33 @@ export type Comment = Readonly<{
 export interface FormData {
   date: string;
   time: string;
-  diners: number;
+  diners: Seats;
   occasion: Occasion;
-  area: Area;
+  area: AreaName;
   name: string;
   email: string;
   comments: string;
 }
 
-type Area =
+export type Restaurant = {
+  [name in AreaName]: Area;
+};
+
+interface Area {
+  petsAllowed: boolean;
+  smokingAllowed: boolean;
+  availableTables: AvailableTables;
+}
+
+type AvailableTables = {
+  [seats in Seats]: number;
+};
+
+type AreaName =
   | "Storefront (Indoors)"
   | "Storefront (Outdoors)"
   | "Indoors (Zone A)"
   | "Indoors (Zone B)";
 
+type Seats = 2 | 4 | 6;
 type Occasion = "Standard" | "Birthday" | "Anniversary" | "Engagement";

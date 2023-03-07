@@ -201,7 +201,9 @@ const Form = () => {
           </label>
         </div>
         <div className="more-info">
-          <label htmlFor="info-icon">Additional information</label>
+          <label htmlFor="info-icon" id="info-label">
+            Additional information
+          </label>
           <InfoIcon
             className="info-icon"
             id="info-icon"
@@ -213,6 +215,8 @@ const Form = () => {
           {infoTooltipPosition && (
             <div
               className="tooltip"
+              role="tooltip"
+              aria-describedby="info-label"
               style={{
                 top: `${infoTooltipPosition.y + 5}px`,
                 left: `${infoTooltipPosition.x - 170}px`,

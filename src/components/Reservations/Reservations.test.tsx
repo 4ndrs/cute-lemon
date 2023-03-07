@@ -62,6 +62,7 @@ describe("Sanity tests", () => {
     const nextButton = screen.getByRole("button", { name: "Next" });
 
     await waitFor(() => expect(nextButton).not.toHaveAttribute("disabled"));
+
     userEvent.type(dateField, "2023-02-28");
 
     await waitFor(() => expect(nextButton).not.toHaveAttribute("disabled"));
@@ -79,9 +80,7 @@ describe("Sanity tests", () => {
 
     userEvent.click(nextButton);
 
-    await waitFor(() => {
-      screen.getByRole("button", { name: "Reserve" });
-    });
+    await screen.findByRole("button", { name: "Reserve" });
 
     screen.getByText("Indoors (Zone B)");
     screen.getByText("Liselotte Riefenstahl");
@@ -105,24 +104,22 @@ describe("Sanity tests", () => {
     const nextButton = screen.getByRole("button", { name: "Next" });
 
     await waitFor(() => expect(nextButton).not.toHaveAttribute("disabled"));
+
     userEvent.type(dateField, "2023-02-28");
+
     await waitFor(() => expect(nextButton).not.toHaveAttribute("disabled"));
 
     userEvent.type(nameField, "Liselotte Riefenstahl");
     userEvent.type(emailField, "lise@tsunderais.co.jp");
     userEvent.click(nextButton);
 
-    await waitFor(() => {
-      screen.getByRole("button", { name: "Reserve" });
-    });
+    await screen.findByRole("button", { name: "Reserve" });
 
     const reserveButton = screen.getByRole("button", { name: "Reserve" });
 
     userEvent.click(reserveButton);
 
-    await waitFor(() => {
-      screen.getByText("Thank you!");
-    });
+    await screen.findByText("Thank you!");
 
     screen.getByText("lise@tsunderais.co.jp", { exact: false });
   });

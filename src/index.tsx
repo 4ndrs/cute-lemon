@@ -5,12 +5,14 @@ import App from "./App";
 
 import "./index.css";
 
+const BASENAME = process.env.NODE_ENV === "production" ? "/cute-lemon" : "/";
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={BASENAME}>
       <App />
     </BrowserRouter>
   </React.StrictMode>

@@ -7,7 +7,7 @@ const getAvailableTables = async (
 ): Promise<Readonly<typeof restaurantData>> => {
   const data = generateRandomData(date.getDate());
 
-  await sleep(2);
+  await sleep(0.5);
 
   return data;
 };
@@ -55,7 +55,7 @@ const getRandomTimes = (seed: number, areaKey: string) => {
       return [...accumulator, currentTime];
     }
 
-    if (random < 25 && random > 10) {
+    if (random < 25 && random > 10 && currentTime !== "22:00") {
       return [...accumulator, currentTime.replace("00", "30")];
     }
 

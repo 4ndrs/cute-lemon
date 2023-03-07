@@ -66,6 +66,29 @@ const Form = () => {
   };
 
   const required = "Required";
+  const textareaMax = 1000;
+  const maxLength = { value: 70, message: "Character limit is 70" };
+
+  const emailPattern = {
+    value: /^.*@.*\.\w{2,24}$/,
+    message: "Invalid email",
+  };
+
+  const validateArea = (area: keyof Restaurant) => {
+    if (!availableTables) {
+      return true;
+    }
+
+    const timesAvailable = Object.values(
+      availableTables[area].availableTables
+    ).reduce((sum, available) => sum + available.times.length, 0);
+
+    if (timesAvailable > 0) {
+      return true;
+    }
+
+    return "No tables available for booking in this area";
+  };
 
   const isLoading = !availableTables || isFetching;
 
@@ -158,7 +181,7 @@ const Form = () => {
             disabled={isLoading}
             id="area"
             className={errors.area && "invalid-input"}
-            {...register("area", { required })}
+            {...register("area", { required, validate: validateArea })}
           >
             {isLoading ? (
               <option key={defaultValues.area}>{defaultValues.area}</option>
@@ -185,7 +208,7 @@ const Form = () => {
             type="text"
             id="name"
             className={errors.name && "invalid-input"}
-            {...register("name", { required })}
+            {...register("name", { required, maxLength })}
           />
           <label htmlFor="name" className="messages">
             {errors.name?.message}
@@ -196,7 +219,11 @@ const Form = () => {
             type="email"
             id="email"
             className={errors.email && "invalid-input"}
-            {...register("email", { required })}
+            {...register("email", {
+              required,
+              maxLength,
+              pattern: emailPattern,
+            })}
           />
           <label htmlFor="email" className="messages">
             {errors.email?.message}
@@ -208,7 +235,7 @@ const Form = () => {
             cols={33}
             id="comments"
             className={errors.comments && "invalid-input"}
-            {...register("comments")}
+            {...(register("comments"), { maxLength: textareaMax })}
           />
           <label htmlFor="comments" className="messages">
             {errors.comments?.message}

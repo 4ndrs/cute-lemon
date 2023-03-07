@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/cute-lemon/static/css/main.17515a79.css",
+    "main.js": "/cute-lemon/static/js/main.dba8d79a.js",
+    "static/media/restaurantfood.jpg": "/cute-lemon/static/media/restaurantfood.0b71b2d8d5d6ceb76c15.jpg",
+    "static/media/greek_salad.jpg": "/cute-lemon/static/media/greek_salad.2b94d6c38950b097cff3.jpg",
+    "static/media/mario_and_adrian_b_crop.jpg": "/cute-lemon/static/media/mario_and_adrian_b_crop.6882e8a5b9f899f6b4fd.jpg",
+    "static/media/restaurant.jpg": "/cute-lemon/static/media/restaurant.324d0f99bdf19400a0f7.jpg",
+    "static/media/MarkaziText-VariableFont_wght.ttf": "/cute-lemon/static/media/MarkaziText-VariableFont_wght.ab5c6a62488a17ed6c60.ttf",
+    "static/media/bruschetta.jpg": "/cute-lemon/static/media/bruschetta.8810efa893bd0b446103.jpg",
+    "static/media/Karla-VariableFont_wght.ttf": "/cute-lemon/static/media/Karla-VariableFont_wght.e7cdc609f35daffcb788.ttf",
+    "static/media/logo.svg": "/cute-lemon/static/media/logo.6c132dfefa69396bba43f72aa595e62f.svg",
+    "static/media/jennifer.jpg": "/cute-lemon/static/media/jennifer.ccdcea01362423e8e2bf.jpg",
+    "static/media/elisa.jpg": "/cute-lemon/static/media/elisa.ba5a7f9f30d58ab385d9.jpg",
+    "static/media/john.jpg": "/cute-lemon/static/media/john.fa4be855aa1466a1fcb3.jpg",
+    "static/media/bryant.jpg": "/cute-lemon/static/media/bryant.333854849cb34643a28e.jpg",
+    "static/media/bike.svg": "/cute-lemon/static/media/bike.623354d2bd322b893415d10399875ee4.svg",
+    "static/media/calendar.svg": "/cute-lemon/static/media/calendar.f589a24c88a7009249d4883796de24e8.svg",
+    "static/media/clock.svg": "/cute-lemon/static/media/clock.254a303ae73393193e96e3c6768b8213.svg",
+    "static/media/basket.svg": "/cute-lemon/static/media/basket.fae9b50adb46a3bfa9273d6c25dc3935.svg",
+    "static/media/info.svg": "/cute-lemon/static/media/info.76d185c8b57e573400674645be7c7e67.svg",
+    "index.html": "/cute-lemon/index.html",
+    "static/media/back-icon.svg": "/cute-lemon/static/media/back-icon.e799f0f1834c20cde5f7c642171b6e76.svg",
+    "static/media/green_bg.svg": "/cute-lemon/static/media/green_bg.da2f10dda4c230b0ed85.svg",
+    "main.17515a79.css.map": "/cute-lemon/static/css/main.17515a79.css.map",
+    "main.dba8d79a.js.map": "/cute-lemon/static/js/main.dba8d79a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17515a79.css",
+    "static/js/main.dba8d79a.js"
+  ]
+}

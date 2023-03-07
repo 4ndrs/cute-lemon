@@ -88,4 +88,42 @@ describe("Sanity tests", () => {
     screen.getByText("Anniversary");
     screen.getByText("Testing Library rocks");
   });
+
+  test("Shows the confirmation after clicking reserve", async () => {
+    render(
+      <ContextWrapper>
+        <Routes>
+          <Route path="/book/*" element={<Reservations />} />
+          <Route path="/" element={<Reservations />} />
+        </Routes>
+      </ContextWrapper>
+    );
+
+    const dateField = screen.getByLabelText("Date");
+    const nameField = screen.getByLabelText("Your name");
+    const emailField = screen.getByLabelText("Email");
+    const nextButton = screen.getByRole("button", { name: "Next" });
+
+    await waitFor(() => expect(nextButton).not.toHaveAttribute("disabled"));
+    userEvent.type(dateField, "2023-02-28");
+    await waitFor(() => expect(nextButton).not.toHaveAttribute("disabled"));
+
+    userEvent.type(nameField, "Liselotte Riefenstahl");
+    userEvent.type(emailField, "lise@tsunderais.co.jp");
+    userEvent.click(nextButton);
+
+    await waitFor(() => {
+      screen.getByRole("button", { name: "Reserve" });
+    });
+
+    const reserveButton = screen.getByRole("button", { name: "Reserve" });
+
+    userEvent.click(reserveButton);
+
+    await waitFor(() => {
+      screen.getByText("Thank you!");
+    });
+
+    screen.getByText("lise@tsunderais.co.jp", { exact: false });
+  });
 });

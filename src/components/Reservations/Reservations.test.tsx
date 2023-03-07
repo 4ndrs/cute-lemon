@@ -5,14 +5,18 @@ import { BookingProvider } from "../../context/booking";
 
 import Reservations from ".";
 
+const ContextWrapper = ({ children }: { children: React.ReactNode }) => (
+  <BrowserRouter>
+    <BookingProvider>{children}</BookingProvider>
+  </BrowserRouter>
+);
+
 describe("Sanity tests", () => {
   test("Loads and displays the booking header", () => {
     render(
-      <BrowserRouter>
-        <BookingProvider>
-          <Reservations />
-        </BookingProvider>
-      </BrowserRouter>
+      <ContextWrapper>
+        <Reservations />
+      </ContextWrapper>
     );
 
     const heading = screen.getByRole("heading").textContent;

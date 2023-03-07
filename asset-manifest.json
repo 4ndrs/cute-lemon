@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cute-lemon/static/css/main.17515a79.css",
-    "main.js": "/cute-lemon/static/js/main.dba8d79a.js",
+    "main.js": "/cute-lemon/static/js/main.26293fca.js",
     "static/media/restaurantfood.jpg": "/cute-lemon/static/media/restaurantfood.0b71b2d8d5d6ceb76c15.jpg",
     "static/media/greek_salad.jpg": "/cute-lemon/static/media/greek_salad.2b94d6c38950b097cff3.jpg",
     "static/media/mario_and_adrian_b_crop.jpg": "/cute-lemon/static/media/mario_and_adrian_b_crop.6882e8a5b9f899f6b4fd.jpg",
@@ -23,10 +23,10 @@
     "static/media/back-icon.svg": "/cute-lemon/static/media/back-icon.e799f0f1834c20cde5f7c642171b6e76.svg",
     "static/media/green_bg.svg": "/cute-lemon/static/media/green_bg.da2f10dda4c230b0ed85.svg",
     "main.17515a79.css.map": "/cute-lemon/static/css/main.17515a79.css.map",
-    "main.dba8d79a.js.map": "/cute-lemon/static/js/main.dba8d79a.js.map"
+    "main.26293fca.js.map": "/cute-lemon/static/js/main.26293fca.js.map"
   },
   "entrypoints": [
     "static/css/main.17515a79.css",
-    "static/js/main.dba8d79a.js"
+    "static/js/main.26293fca.js"
   ]
 }

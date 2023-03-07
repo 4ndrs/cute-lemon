@@ -70,6 +70,7 @@ const Header = () => {
       <header className="header">
         <label className="hamburger">
           <input
+            aria-label="menu"
             type="checkbox"
             checked={hamburgerOpen}
             onChange={() => toggleHamburger()}

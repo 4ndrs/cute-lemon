@@ -71,7 +71,7 @@ const Form = () => {
   };
 
   const required = "Required";
-  const textareaMax = 1000;
+  const textareaMax = { value: 1000, message: "Character limit is 1000" };
   const maxLength = { value: 70, message: "Character limit is 70" };
 
   const emailPattern = {
@@ -266,7 +266,7 @@ const Form = () => {
             cols={33}
             id="comments"
             className={errors.comments && "invalid-input"}
-            {...(register("comments"), { maxLength: textareaMax })}
+            {...register("comments", { maxLength: textareaMax })}
           />
           <label htmlFor="comments" className="messages">
             {errors.comments?.message}

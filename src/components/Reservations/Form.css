@@ -164,6 +164,14 @@
   color: red;
 }
 
+.more-info > .tooltip {
+  background-color: var(--primary-green);
+  border-radius: 8px;
+  color: white;
+  padding: 1em;
+  position: fixed;
+}
+
 @media (max-width: 447px) {
   .form-container,
   .overview-container,

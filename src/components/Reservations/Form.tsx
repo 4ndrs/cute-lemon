@@ -20,6 +20,11 @@ const Form = () => {
 
   const [isFetching, setIsFetching] = useState(false);
 
+  const [infoTooltipPosition, setInfoTooltipPosition] = useState<{
+    x: number;
+    y: number;
+  }>();
+
   const [availableTables, setAvailableTables] =
     useState<Readonly<Restaurant>>();
 
@@ -196,10 +201,32 @@ const Form = () => {
           </label>
         </div>
         <div className="more-info">
-          <label htmlFor="info">Additional information</label>
-          <a href="#TBD" id="info">
-            <InfoIcon className="info-icon" />
-          </a>
+          <label htmlFor="info-icon">Additional information</label>
+          <InfoIcon
+            className="info-icon"
+            id="info-icon"
+            onMouseEnter={({ clientX, clientY }) => {
+              setInfoTooltipPosition({ x: clientX, y: clientY });
+            }}
+            onMouseLeave={() => setInfoTooltipPosition(undefined)}
+          />
+          {infoTooltipPosition && (
+            <div
+              className="tooltip"
+              style={{
+                top: `${infoTooltipPosition.y + 5}px`,
+                left: `${infoTooltipPosition.x - 170}px`,
+              }}
+            >
+              * {availableTables?.[watchArea].petsAllowed ? "Pets" : "No pets"}{" "}
+              allowed
+              <br />*{" "}
+              {availableTables?.[watchArea].smokingAllowed
+                ? "Smoking"
+                : "No smoking"}{" "}
+              area
+            </div>
+          )}
         </div>
 
         <div className="text-fields">
